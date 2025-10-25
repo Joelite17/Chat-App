@@ -1,0 +1,30 @@
+#root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  padding: 20px 10px;
+  color: white;
+}
+
+#root::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/login-hero-bg.jpg") center/cover no-repeat, #000;
+  z-index: -1;
+}
+
+
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #fff;
+}

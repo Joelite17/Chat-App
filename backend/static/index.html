@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WebSocket Test</title>
+</head>
+<body>
+    <div id="status">Testing WebSocket...</div>
+    <script>
+        const roomId = 9; // Use your actual room ID
+        const ws = new WebSocket(`http://localhost:8000/api/chat/rooms/${roomId}/`);
+        
+        ws.onopen = function(event) {
+            console.log('WebSocket connected!');
+            document.getElementById('status').innerHTML = '✅ WebSocket CONNECTED!';
+            document.getElementById('status').style.color = 'green';
+        };
+        
+        ws.onmessage = function(event) {
+            console.log('Message received:', event.data);
+            document.getElementById('status').innerHTML += `<br>📨 Received: ${event.data}`;
+        };
+        
+        ws.onerror = function(error) {
+            console.error('WebSocket error:', error);
+            document.getElementById('status').innerHTML = '❌ WebSocket ERROR: ' + error;
+            document.getElementById('status').style.color = 'red';
+        };
+        
+        ws.onclose = function(event) {
+            console.log('WebSocket closed:', event);
+            document.getElementById('status').innerHTML += `<br>🔌 WebSocket closed: ${event.code} - ${event.reason}`;
+        };
+        
+        // Test sending a message after 2 seconds
+        setTimeout(() => {
+            if (ws.readyState === WebSocket.OPEN) {
+                ws.send(JSON.stringify({
+                    type: 'chat_message',
+                    message: 'Test message from WebSocket test'
+                }));
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

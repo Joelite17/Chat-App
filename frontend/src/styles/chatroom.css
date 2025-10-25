@@ -1,0 +1,186 @@
+
+.chat-room-wrapper {
+  width: 500px;
+  box-sizing: border-box;
+  max-width: 500px;
+  border-radius: 8px;
+  padding: 20px;
+  padding-left: 0;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(8px);
+  margin: 0 auto;
+}
+
+/* Scrollable messages */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Messages */
+.message {
+  width: calc(100% - 100px);
+  border-radius: 15px;
+  padding: 1em;
+  word-wrap: break-word;
+}
+
+.person-a {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1em;
+}
+
+.person-a .message {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  text-align: left;
+
+}
+
+.icon {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  background: url("https://i.ibb.co/vB9B6G8/mWDLI93.gif");
+  background-position: center;
+  background-size: cover;
+  border-radius: 100%;
+  margin-right: 0.8em;
+  position: relative;
+}
+
+.icon::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: lightgreen;
+  border-radius: 100%;
+  bottom: 0;
+  right: 0;
+}
+
+.person-b .message {
+  background: rgba(173, 216, 230, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 1em 0 1em 100px;
+  color: #fff;
+  text-align: right;
+}
+
+/* Fixed Input Area */
+.input-area {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  margin: 0 auto;
+  z-index: 100;
+
+}
+
+.input-area input {
+  flex: 1;
+  padding: 0.8em;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 1em;
+  margin-right: 0.5em;
+}
+
+.input-area input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.input-area button {
+  background: rgba(255, 255, 255, 0.8);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 0.7em 1.4em;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95em;
+  transition: 0.3s ease;
+}
+
+.input-area button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* Add to your existing CSS for time */
+.message-timestamp {
+  font-size: 0.7em;
+  color: white;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.person-a .message-timestamp {
+  text-align: left;
+}
+
+.sending-indicator {
+  font-style: italic;
+  color: #888;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+/*  for read/not read*/
+/* Add to your existing CSS */
+.message-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.message-timestamp {
+  font-size: 0.7em;
+  color: white;
+}
+
+.read-status {
+  font-size: 0.7em;
+  color: white;
+  margin-left: 8px;
+}
+
+.person-a .message-footer {
+  justify-content: flex-start;
+}
+
+.person-b .message-footer {
+  justify-content: flex-end;
+}
+
+.sending-indicator {
+  font-style: italic;
+  color: white;
+  font-size: 0.8em;
+  margin-left: 8px;
+}
+
+/* Optional: Color the double ticks when read */
+.person-b .read-status {
+  color: #4CAF50; /* Green for read messages */
+}

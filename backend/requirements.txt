@@ -1,0 +1,34 @@
+# Core Django
+Django==5.0.4
+
+# Django REST Framework
+djangorestframework==3.15.1
+
+# CORS Headers (to allow frontend access)
+django-cors-headers==4.3.1
+
+# Channels for real-time WebSocket communication
+channels==4.1.0
+channels-redis==4.2.0
+
+# PostgreSQL database adapter
+psycopg2-binary==2.9.9
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# Email backend (optional but useful)
+django-anymail==10.2
+
+# Authentication helpers (optional)
+djangorestframework-simplejwt==5.3.1
+
+# Static files for production
+whitenoise==6.6.0
+
+# Gunicorn for deployment
+gunicorn==22.0.0
+
+# Optional utilities
+requests==2.31.0
+Pillow==10.2.0

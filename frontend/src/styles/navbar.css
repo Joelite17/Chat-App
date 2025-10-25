@@ -1,0 +1,94 @@
+
+.navbar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Logo */
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Hamburger Menu Icon (hidden by default) */
+.menu-icon {
+  display: none;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive Navbar (for mobile screens) */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 65px;
+    right: 0;
+    width: 200px;
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.8);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: none;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 8px 0;
+  }
+}
+
+/* Add top padding to body content so navbar doesn’t overlap */
+body {
+  padding-top: 80px;
+}
